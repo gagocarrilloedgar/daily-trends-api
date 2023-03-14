@@ -38,9 +38,7 @@ export class Server {
   async listen(): Promise<void> {
     return new Promise(resolve => {
       this.httpServer = this.express.listen(this.port, () => {
-        console.log(
-          `Api is running at http://localhost:${this.port} in ${this.express.get('env')} mode`
-        );
+        console.log(`Api is running at http://localhost:${this.port} in ${this.express.get('env')} mode`);
         console.log('  Press CTRL-C to stop\n');
         resolve();
       });
