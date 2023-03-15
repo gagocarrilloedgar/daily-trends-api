@@ -1,5 +1,6 @@
 import { FeedId } from '../../Shared/domain/Feed/FeedId';
-import { Feed, FeedRepository, Source } from '../domain';
+import { SourceTypes } from '../../Shared/domain/Feed/Source';
+import { Feed, FeedRepository } from '../domain';
 
 export class FeedCreator {
   constructor(private feedRepository: FeedRepository) {}
@@ -10,7 +11,7 @@ export class FeedCreator {
     url: string,
     description: string,
     image: string,
-    source: Source,
+    source: SourceTypes,
     date: Date
   ): Promise<void> {
     const feed = new Feed(new FeedId(id), title, url, description, image, source, date);
