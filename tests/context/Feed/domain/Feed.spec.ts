@@ -1,4 +1,5 @@
-import { Feed, Source } from '../../../../src/context/Feed/domain';
+import { Feed } from '../../../../src/context/Feed/domain';
+import { SourceTypes } from '../../../../src/context/Shared/domain/Feed/Source';
 import { Uuid } from '../../../../src/context/Shared/domain/value-object/Uuid';
 
 describe('Feed', () => {
@@ -9,7 +10,7 @@ describe('Feed', () => {
       'Feed description',
       'https://example.com',
       'https://example.com/image.png',
-      Source.ELMUNDO,
+      SourceTypes.ELMUNDO,
       new Date()
     );
     expect(feed).toBeDefined();

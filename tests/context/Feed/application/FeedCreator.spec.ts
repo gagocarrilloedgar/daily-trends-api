@@ -1,5 +1,6 @@
 import { FeedCreator } from '../../../../src/context/Feed/application';
-import { Feed, Source } from '../../../../src/context/Feed/domain';
+import { Feed } from '../../../../src/context/Feed/domain';
+import { SourceTypes } from '../../../../src/context/Shared/domain/Feed/Source';
 import { Uuid } from '../../../../src/context/Shared/domain/value-object/Uuid';
 import { FeedRepositoryMock } from '../__mocks__/FeedRepositoryMock';
 
@@ -18,7 +19,7 @@ describe('FeedCreator', () => {
     const description = 'Feed description';
     const url = 'https://example.com';
     const image = 'https://example.com/image.png';
-    const source = Source.ELMUNDO;
+    const source = SourceTypes.ELMUNDO;
     const date = new Date();
 
     await creator.run(id, title, url, description, image, source, date);
