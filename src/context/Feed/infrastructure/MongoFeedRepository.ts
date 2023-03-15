@@ -1,5 +1,5 @@
 import { FeedId } from '../../Shared/domain/Feed/FeedId';
-import { MongooseRepository } from '../../Shared/infrastructure/persistance/mongoose/MongooseRepository';
+import { MongoRepository } from '../../Shared/infrastructure/persistance/mongo/MongoRepository';
 
 import { Feed } from '../domain/Feed';
 import { FeedRepository } from '../domain/FeedRepository';
@@ -14,7 +14,7 @@ interface FeedDocument {
   date: Date;
 }
 
-export class MongooseFeedRepository extends MongooseRepository<Feed> implements FeedRepository {
+export class MongoFeedRepository extends MongoRepository<Feed> implements FeedRepository {
   findOne(query: unknown): Promise<Feed> {
     throw new Error('Method not implemented.');
   }
@@ -50,6 +50,6 @@ export class MongooseFeedRepository extends MongooseRepository<Feed> implements 
   }
 
   protected collectionName(): string {
-    return 'feeds';
+    return 'feed';
   }
 }

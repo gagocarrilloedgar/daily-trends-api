@@ -1,4 +1,5 @@
 import convict from 'convict';
+import 'dotenv/config';
 
 const moocConfig = convict({
   env: {
@@ -12,11 +13,11 @@ const moocConfig = convict({
       doc: 'The Mongo connection URL',
       format: String,
       env: 'MONGO_URL',
-      default: 'mongodb://localhost:27017/dev'
+      default: process.env.MONGO_URL
     }
   }
 });
 
-moocConfig.loadFile([__dirname + '/default.json', __dirname + '/' + moocConfig.get('env') + '.json']);
+moocConfig.loadFile([__dirname + '/' + moocConfig.get('env') + '.json']);
 
 export default moocConfig;

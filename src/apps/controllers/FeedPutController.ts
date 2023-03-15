@@ -1,21 +1,17 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
-
-import { Feed, FeedRepository } from '../../context/Feed/domain';
-import { FeedId } from '../../context/Shared/domain/Feed/FeedId';
+import { FeedCreator } from '../../context/Feed/application';
 
 import { Controller } from './Controller';
 
 export class FeedPutController implements Controller {
-  constructor(private feedRepository: FeedRepository) {}
+  constructor(private feedCreator: FeedCreator) {}
 
   async run(req: Request, res: Response) {
     const { id, title, url, description, image, source, date } = req.body;
 
-    const feed = new Feed(new FeedId(id), title, url, description, image, source, date);
+    await this.feedCreator.run(id, title, url, description, image, source, new Date(date));
 
-    await this.feedRepository.save(feed);
-
-    res.status(httpStatus.CREATED).send();
+    res.status(httpStatus.CREATED).json({ msg: 'Feed created' });
   }
 }

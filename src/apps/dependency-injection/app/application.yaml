@@ -5,4 +5,4 @@ services:
 
   controllers.FeedPutController:
     class: ../../controllers/FeedPutController
-    arguments: ['Feed.application.FeedCreator']
+    arguments: ['@Feed.application.FeedCreator']

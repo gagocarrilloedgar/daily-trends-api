@@ -1,17 +1,17 @@
 services:
   MongoConfig:
     factory:
-      class: ../../../context/Shared/infrastructure/persistance/mongoose/MongooseConfigFactory
+      class: ../../../context/Shared/infrastructure/persistance/mongo/MongoConfigFactory
       method: 'create'
 
   ConnectionManager:
     factory:
-      class: ../../../context/Shared/infrastructure/persistance/mongoose/MongooseClientFactory
-      method: 'createClient'
+      class: ../../../context/Shared/infrastructure/persistance/mongo/MongoClientFactory
+      method: 'create'
     arguments: ['@MongoConfig']
 
   Feed.domain.FeedRepository:
-    class: ../../../context/Feed/infrastructure/MongooseFeedRepository
+    class: ../../../context/Feed/infrastructure/MongoFeedRepository
     arguments: ['@ConnectionManager']
 
   Feed.application.FeedCreator:
