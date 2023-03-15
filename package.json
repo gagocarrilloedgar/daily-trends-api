@@ -18,6 +18,7 @@
     "build:tsc": "tsc -p tsconfig.prod.json",
     "build:clean": "rm -r dist; exit 0",
     "test:int": "jest --testPathPattern=tests/app",
+    "test:unit": "jest --testPathPattern=tests/context",
     "test:int:cov": "jest --coverage --testPathPattern=tests/app",
     "test": "jest"
   },

@@ -3,28 +3,26 @@ export enum Source {
   ELPAIS = 'elpais.com'
 }
 
+export type ID = string;
+
+export type FeedId = ID;
+
 export class Feed {
-  public id: string;
+  public id: FeedId;
   public title: string;
   public url: string;
   public description: string;
   public image: string;
   public source: Source;
+  public date: Date;
 
-  constructor(
-    id: string,
-    title: string,
-    url: string,
-    description: string,
-    link: string,
-    image: string,
-    source: Source
-  ) {
+  constructor(id: FeedId, title: string, url: string, description: string, image: string, source: Source, date: Date) {
     this.id = id;
     this.title = title;
     this.url = url;
     this.description = description;
     this.image = image;
     this.source = source;
+    this.date = date;
   }
 }
