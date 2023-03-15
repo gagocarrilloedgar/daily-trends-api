@@ -25,3 +25,7 @@ services:
   Feed.application.FeedRemover:
     class: ../../../context/Feed/application/FeedRemover
     arguments: ['@Feed.domain.FeedRepository']
+
+  Feed.application.FeedScrapperRunner:
+    class: ../../../context/Feed/application/FeedScrapperRunner
+    arguments: []

@@ -15,6 +15,6 @@ services:
     class: ../../controllers/FeedDeleteController
     arguments: ['@Feed.application.FeedRemover']
 
-  controllers.FeedScrapperPutController:
-    class: ../../controllers/FeedScrapperPutController
-    arguments: []
+  controllers.FeedScrapperGetController:
+    class: ../../controllers/FeedScrapperGetController
+    arguments: ["@Feed.application.FeedScrapperRunner"]
