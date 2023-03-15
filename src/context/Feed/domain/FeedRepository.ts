@@ -11,5 +11,4 @@ export interface FeedRepository {
   find(): Promise<Array<Feed>>;
   findOne(query: unknown): Promise<Feed>;
   delete(id: FeedId): Promise<void>;
-  update(feed: Feed): Promise<void>;
 }

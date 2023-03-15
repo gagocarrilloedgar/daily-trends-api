@@ -2,13 +2,12 @@ import { FeedId } from '../../Shared/domain/Feed/FeedId';
 import { FeedRepository } from '../domain';
 
 export class FeedRemover {
-  constructor(private repository: FeedRepository, private id: string) {
+  constructor(private repository: FeedRepository) {
     this.repository = repository;
-    this.id = id;
   }
 
-  async run(): Promise<void> {
-    const feedId = new FeedId(this.id);
+  async run(id: string): Promise<void> {
+    const feedId = new FeedId(id);
 
     await this.repository.delete(feedId);
   }

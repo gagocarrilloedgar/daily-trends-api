@@ -17,3 +17,11 @@ services:
   Feed.application.FeedCreator:
     class: ../../../context/Feed/application/FeedCreator
     arguments: ['@Feed.domain.FeedRepository']
+
+  Feed.application.FeedFinder:
+    class: ../../../context/Feed/application/FeedFinder
+    arguments: ['@Feed.domain.FeedRepository']
+
+  Feed.application.FeedRemover:
+    class: ../../../context/Feed/application/FeedRemover
+    arguments: ['@Feed.domain.FeedRepository']

@@ -6,3 +6,11 @@ services:
   controllers.FeedPutController:
     class: ../../controllers/FeedPutController
     arguments: ['@Feed.application.FeedCreator']
+
+  controllers.FeedGetController:
+    class: ../../controllers/FeedGetController
+    arguments: ['@Feed.application.FeedFinder']
+
+  controllers.FeedDeleteController:
+    class: ../../controllers/FeedDeleteController
+    arguments: ['@Feed.application.FeedRemover']

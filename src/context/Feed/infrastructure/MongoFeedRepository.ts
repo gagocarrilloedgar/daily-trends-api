@@ -1,3 +1,4 @@
+import { ObjectId } from 'mongodb';
 import { FeedId } from '../../Shared/domain/Feed/FeedId';
 import { MongoRepository } from '../../Shared/infrastructure/persistance/mongo/MongoRepository';
 
@@ -15,15 +16,37 @@ interface FeedDocument {
 }
 
 export class MongoFeedRepository extends MongoRepository<Feed> implements FeedRepository {
-  findOne(query: unknown): Promise<Feed> {
-    throw new Error('Method not implemented.');
+  async findOne(query: unknown): Promise<Feed> {
+    const collection = await this.collection();
+
+    // This should be temporary, we should isolate the mongo infrastructure
+    const queryId = { _id: query as string } as unknown as { _id: ObjectId };
+
+    const document = await collection.findOne<FeedDocument>(queryId);
+
+    if (!document) {
+      throw new Error('Feed not found');
+    }
+
+    return Feed.fromPrimitives({
+      id: document._id,
+      title: document.title,
+      description: document.description,
+      url: document.url,
+      image: document.image,
+      source: document.source,
+      date: document.date
+    });
   }
-  delete(id: FeedId): Promise<void> {
-    throw new Error('Method not implemented.');
+
+  async delete(id: FeedId): Promise<void> {
+    const collection = await this.collection();
+
+    const mongoId = id.value as unknown as ObjectId;
+
+    await collection.deleteOne({ _id: mongoId });
   }
-  async update(feed: Feed): Promise<void> {
-    throw new Error('Method not implemented.');
-  }
+
   async save(feed: Feed): Promise<void> {
     await this.persist(feed.id.value, feed);
   }

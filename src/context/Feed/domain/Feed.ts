@@ -57,7 +57,7 @@ export class Feed extends AggregateRoot {
       url: this.url,
       description: this.description,
       image: this.image,
-      source: this.source,
+      source: this.source.value,
       date: this.date
     };
   }

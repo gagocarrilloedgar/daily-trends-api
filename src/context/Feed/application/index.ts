@@ -1,4 +1,4 @@
 export * from './FeedCreator';
+export * from './FeedFinder';
 export * from './FeedRemover';
-export * from './FindFinder';
-export * from './FindSingleFeed';
+
