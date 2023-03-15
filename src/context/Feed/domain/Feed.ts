@@ -1,11 +1,9 @@
+import { FeedId } from '../../Shared/domain/Feed/FeedId';
+
 export enum Source {
   ELMUNDO = 'elmundo.com',
   ELPAIS = 'elpais.com'
 }
-
-export type ID = string;
-
-export type FeedId = ID;
 
 export class Feed {
   public id: FeedId;

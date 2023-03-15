@@ -44,6 +44,8 @@
     "nunjucks": "^3.2.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.2.3",
+    "uuid": "^9.0.0",
+    "uuid-validate": "^0.0.3",
     "winston": "^3.3.3"
   },
   "devDependencies": {
@@ -57,6 +59,8 @@
     "@types/node": "^14.14.34",
     "@types/nunjucks": "^3.1.4",
     "@types/supertest": "^2.0.12",
+    "@types/uuid": "^9.0.1",
+    "@types/uuid-validate": "^0.0.1",
     "devmoji": "^2.3.0",
     "faker": "^5.4.0",
     "husky": "^8.0.3",
