@@ -1,3 +1,4 @@
+import { FeedId } from '../../Shared/domain/Feed/FeedId';
 import { Feed } from './Feed';
 
 /**
@@ -7,8 +8,8 @@ import { Feed } from './Feed';
  */
 export interface FeedRepository {
   save(feed: Feed): Promise<void>;
-  find(id: string): Promise<Feed[] | undefined>;
-  findOne(query: unknown): Promise<Feed | undefined>;
-  delete(id: string): Promise<void>;
+  find(): Promise<Array<Feed>>;
+  findOne(query: unknown): Promise<Feed>;
+  delete(id: FeedId): Promise<void>;
   update(feed: Feed): Promise<void>;
 }
