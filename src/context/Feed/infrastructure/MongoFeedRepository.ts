@@ -22,7 +22,7 @@ export class MongoFeedRepository extends MongoRepository<Feed> implements FeedRe
     const collection = await this.collection();
 
     // This should be temporary, we should isolate the mongo infrastructure
-    const queryId = { _id: query as string } as unknown as { _id: ObjectId };
+    const queryId = query as object;
 
     const document = await collection.findOne<FeedDocument>(queryId);
 

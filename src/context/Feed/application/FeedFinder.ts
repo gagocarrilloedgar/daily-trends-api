@@ -5,7 +5,7 @@ export class FeedFinder {
 
   async run(id: string) {
     // This _id should be transform to isolate the mongo infrastructure
-    const feed = await this.repository.findOne(id);
+    const feed = await this.repository.findOne({ _id: id });
 
     const feedConverted = new Feed(
       feed.id,

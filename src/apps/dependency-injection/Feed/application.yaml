@@ -28,4 +28,4 @@ services:
 
   Feed.application.FeedScrapperRunner:
     class: ../../../context/Feed/application/FeedScrapperRunner
-    arguments: []
+    arguments: ['@Feed.domain.FeedRepository']

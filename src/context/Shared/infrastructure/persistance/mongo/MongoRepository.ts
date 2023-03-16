@@ -19,8 +19,8 @@ export abstract class MongoRepository<T extends AggregateRoot> {
     const collection = await this.collection();
 
     const mongoId = id as unknown as ObjectId;
-
-    const document = { ...aggregateRoot.toPrimitives(), _id: id, id: undefined };
+    const primitive = aggregateRoot.toPrimitives();
+    const document = { ...primitive, _id: id, id: undefined };
 
     await collection.updateOne({ _id: mongoId }, { $set: document }, { upsert: true });
   }
