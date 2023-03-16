@@ -14,6 +14,8 @@ export class FeedFinder {
       feed.description,
       feed.image,
       feed.source.value,
+      feed.author,
+      feed.location,
       feed.date
     );
 

@@ -11,6 +11,8 @@ describe('Feed', () => {
       'https://example.com',
       'https://example.com/image.png',
       SourceTypes.ELMUNDO,
+      'John Doe',
+      'Madrid',
       new Date()
     );
     expect(feed).toBeDefined();

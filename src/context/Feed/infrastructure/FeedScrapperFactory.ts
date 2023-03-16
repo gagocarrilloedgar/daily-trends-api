@@ -1,5 +1,6 @@
 import { SourceTypes } from '../../Shared/domain/Feed/Source';
 import { FeedScrapperRepository } from '../domain/FeedScrapperRepository';
+import { ElMundoFeedScrapperRepository } from './ElMundoFeedScrapperRepository';
 
 import { ElPaisFeedScrapperRepository } from './ElPaisFeedScrapperRepository';
 
@@ -9,7 +10,7 @@ export class FeedScrapperFactory {
       case SourceTypes.ELPAIS:
         return new ElPaisFeedScrapperRepository();
       case SourceTypes.ELMUNDO:
-        throw new Error('FeedScrapperRepository not implemented for ELPAIS');
+        return new ElMundoFeedScrapperRepository();
       default:
         throw new Error('FeedScrapperRepository not found');
     }

@@ -12,6 +12,8 @@ interface FeedDocument {
   url: string;
   image: string;
   source: string;
+  author: string;
+  location: string;
   date: Date;
 }
 
@@ -35,6 +37,8 @@ export class MongoFeedRepository extends MongoRepository<Feed> implements FeedRe
       url: document.url,
       image: document.image,
       source: document.source,
+      author: document.author,
+      location: document.location,
       date: document.date
     });
   }
@@ -67,6 +71,8 @@ export class MongoFeedRepository extends MongoRepository<Feed> implements FeedRe
         url: document.url,
         image: document.image,
         source: document.source,
+        author: document.author,
+        location: document.location,
         date: document.date
       })
     );

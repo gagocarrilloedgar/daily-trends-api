@@ -12,9 +12,11 @@ export class FeedCreator {
     description: string,
     image: string,
     source: SourceTypes,
+    authorName: string,
+    location: string,
     date: Date
   ): Promise<void> {
-    const feed = new Feed(new FeedId(id), title, url, description, image, source, date);
+    const feed = new Feed(new FeedId(id), title, url, description, image, source, authorName, location, new Date(date));
 
     await this.feedRepository.save(feed);
   }

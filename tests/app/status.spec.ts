@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { Server } from '../../src/app/server';
+import { Server } from '../../src/apps/server';
 
 describe('Status', () => {
   test('should return 200', async () => {

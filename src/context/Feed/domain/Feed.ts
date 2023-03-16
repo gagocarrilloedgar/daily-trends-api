@@ -9,6 +9,8 @@ export class Feed extends AggregateRoot {
   public description: string;
   public image: string;
   public source: Source;
+  public author: string;
+  public location: string;
   public date: Date;
 
   constructor(
@@ -18,6 +20,8 @@ export class Feed extends AggregateRoot {
     description: string,
     image: string,
     source: keyof typeof SourceTypes,
+    author: string,
+    location: string,
     date: Date
   ) {
     super();
@@ -27,6 +31,8 @@ export class Feed extends AggregateRoot {
     this.description = description;
     this.image = image;
     this.source = Source.fromString(source);
+    this.author = author;
+    this.location = location;
     this.date = date;
   }
 
@@ -37,6 +43,8 @@ export class Feed extends AggregateRoot {
     description: string;
     image: string;
     source: string;
+    author: string;
+    location: string;
     date: Date;
   }): Feed {
     return new Feed(
@@ -46,6 +54,8 @@ export class Feed extends AggregateRoot {
       primitives.description,
       primitives.image,
       primitives.source as keyof typeof SourceTypes,
+      primitives.author,
+      primitives.location,
       primitives.date
     );
   }

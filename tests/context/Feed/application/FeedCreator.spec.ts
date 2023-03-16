@@ -20,10 +20,12 @@ describe('FeedCreator', () => {
     const url = 'https://example.com';
     const image = 'https://example.com/image.png';
     const source = SourceTypes.ELMUNDO;
+    const authorName = 'John Doe';
+    const location = 'Madrid';
     const date = new Date();
 
-    await creator.run(id, title, url, description, image, source, date);
-    const expectedCourse = new Feed(new Uuid(id), title, url, description, image, source, date);
+    await creator.run(id, title, url, description, image, source, authorName, location, date);
+    const expectedCourse = new Feed(new Uuid(id), title, url, description, image, source, authorName, location, date);
 
     repository.assertSaveHasBeenCalledWith(expectedCourse);
   });
