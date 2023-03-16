@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import * as http from 'http';
 import httpStatus from 'http-status';
 import { errorConverter, errorHandler } from './middlewares/error';
+import { initOpenApi, openApiInstance } from './middlewares/openapi';
 import { registerRoutes } from './routes';
 
 export class Server {
@@ -27,7 +28,9 @@ export class Server {
     const router = PromiseRouter();
     this.express.use(router);
 
-    registerRoutes(router);
+    registerRoutes(router, openApiInstance);
+
+    initOpenApi(router, openApiInstance);
 
     router.use(errorConverter);
 
