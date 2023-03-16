@@ -1,11 +1,11 @@
 import bodyParser from 'body-parser';
 import compress from 'compression';
-import errorHandler from 'errorhandler';
-import express, { Request, Response } from 'express';
-import Router from 'express-promise-router';
+import express, { NextFunction, Request, Response } from 'express';
+import PromiseRouter from 'express-promise-router';
 import helmet from 'helmet';
 import * as http from 'http';
 import httpStatus from 'http-status';
+import { errorConverter, errorHandler } from './middlewares/error';
 import { registerRoutes } from './routes';
 
 export class Server {
@@ -20,18 +20,21 @@ export class Server {
     this.express.use(bodyParser.urlencoded({ extended: true }));
     this.express.use(helmet.xssFilter());
     this.express.use(helmet.noSniff());
+    this.express.use(compress());
     this.express.use(helmet.hidePoweredBy());
     this.express.use(helmet.frameguard({ action: 'deny' }));
-    this.express.use(compress());
-    const router = Router();
-    router.use(errorHandler());
+
+    const router = PromiseRouter();
     this.express.use(router);
 
     registerRoutes(router);
 
-    router.use((err: Error, req: Request, res: Response, next: Function) => {
-      console.log(err);
-      res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message);
+    router.use(errorConverter);
+
+    router.use(errorHandler);
+
+    router.use((_req: Request, res: Response, next: NextFunction) => {
+      res.status(httpStatus.NOT_FOUND).json({ error: 'Not found' });
     });
   }
 
@@ -39,7 +42,7 @@ export class Server {
     return new Promise(resolve => {
       this.httpServer = this.express.listen(this.port, () => {
         console.log(`Api is running at http://localhost:${this.port} in ${this.express.get('env')} mode`);
-        console.log('  Press CTRL-C to stop\n');
+        console.log('Press CTRL-C to stop\n');
         resolve();
       });
     });
