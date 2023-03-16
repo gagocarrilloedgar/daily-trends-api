@@ -93,5 +93,3 @@ API docs.
 ## Manual Testing
 
 [Postman colletion](assets/DailyTrends.postman_collection.json)
-
-## Project Architecture
