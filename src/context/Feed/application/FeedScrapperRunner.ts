@@ -1,14 +1,11 @@
+import { SourceTypes } from '../../Shared/domain/Feed/Source';
 import { Feed } from '../domain';
-import { FeedScrapperRepository } from '../domain/FeedScrapperRepository';
+import { FeedScrapperFactory } from '../infrastructure/FeedScrapperFactory';
 
 export class FeedScrapperRunner {
-  constructor(private repository: FeedScrapperRepository) {}
-
-  async run(): Promise<Feed[]> {
-    const feeds = await this.repository.scrap();
-
-    // Here we could add some logic to save the feeds in the database and be able to cache them for the next request (within the same day)
-
+  async run(type: string): Promise<Feed[]> {
+    const scrapper = FeedScrapperFactory.create(type.toUpperCase() as SourceTypes);
+    const feeds = await scrapper.scrap();
     return feeds;
   }
 }

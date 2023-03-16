@@ -4,9 +4,9 @@ import { FeedScrapperRunner } from '../../context/Feed/application/FeedScrapperR
 export class FeedScrapperGetController {
   constructor(private runner: FeedScrapperRunner) {}
 
-  async run(_req: Request, res: Response) {
-    // here we need to add some logic to get the url from the request
-    const feed = await this.runner.run();
+  async run(req: Request, res: Response) {
+    const type = req.query?.type as string;
+    const feed = await this.runner.run(type);
     res.status(200).send({ feed });
   }
 }
