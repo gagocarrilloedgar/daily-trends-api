@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "61088099-513c-49b8-b0c2-a3a36af42066",
+		"name": "DailyTrends",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17155851"
+	},
+	"item": [
+		{
+			"name": "Feed",
+			"item": [
+				{
+					"name": "add-feed",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"0766c602-d4d4-48b6-9d50-d3253123273e\",\n    \"title\": \"Feed title\",\n    \"description\": \"Feed description\",\n    \"url\": \"https://example.com\",\n    \"image\": \"https://example.com/image.png\",\n    \"source\": \"ELMUNDO\",\n    \"author\": \"\",\n    \"location\": \"\",\n    \"date\": \"2021/03/07\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/feed",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"feed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"0766c602-d4d4-48b6-9d50-d3253123276e\",\n    \"title\": \"Feed title\",\n    \"description\": \"Feed description\",\n    \"url\": \"https://example.com\",\n    \"image\": \"https://example.com/image.png\",\n    \"source\": \"ELMUNDO\",\n    \"date\": \"2021/03/07\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/feed/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"feed",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "83529269-5e92-4034-b528-89420a576c29"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"0766c602-d4d4-48b6-9d50-d3253123276e\",\n    \"title\": \"Feed title\",\n    \"description\": \"Feed description\",\n    \"url\": \"https://example.com\",\n    \"image\": \"https://example.com/image.png\",\n    \"source\": \"ELMUNDO\",\n    \"date\": \"2021/03/07\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/feed/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"feed",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "83529269-5e92-4034-b528-89420a576c29"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1007"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3ef-UNmAoxbBl7GX7rVc98TRQUQ683E\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Mar 2023 13:26:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"83529269-5e92-4034-b528-89420a576c29\",\n        \"title\": \"El BCE sube los tipos de inter\\ufffds otro medio punto a pesar de la volatilidad tras la ca\\ufffdda del SVBEl rescate de Credit Suisse da aire a las bolsas y los bancos repuntan a la espera del BCETodos los errores tras la crisis: de la fuga de los ricos a los manejos de la c\\ufffdpulaEl\\ufffdv\\ufffddeo\\ufffdque prueba\\ufffdque\\ufffdel impacto de\\ufffdun caza ruso derrib\\ufffd un dron de EEUU en el\\ufffdmar NegroEl\\ufffdv\\ufffddeo\\ufffdque prueba\\ufffdque\\ufffdel impacto de\\ufffdun caza ruso derrib\\ufffd un dron de EEUU en el\\ufffdmar NegroTamames anuncia \\\"novedades\\\" y Abascal espera que tras la filtraci\\ufffdn de su discurso el PP reflexione y apoye la moci\\ufffdn de censuraLa familia de Canet: \\\"A mi hija s\\ufffdlo la invitaron a un cumplea\\ufffdos\\\"\",\n        \"url\": \"https://www.elmundo.es/economia/2023/03/16/6413150dfc6c839e558b4584.html\",\n        \"description\": \"https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2023/03/16/16789298346788.jpg\",\n        \"image\": \"\",\n        \"source\": \"ELMUNDO\",\n        \"date\": \"2023-03-16T13:25:28.246Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"0766c602-d4d4-48b6-9d50-d3253123276e\",\n    \"title\": \"Feed title\",\n    \"description\": \"Feed description\",\n    \"url\": \"https://example.com\",\n    \"image\": \"https://example.com/image.png\",\n    \"source\": \"ELMUNDO\",\n    \"date\": \"2021/03/07\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/feed/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"feed",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0766c602-d4d4-48b6-9d50-d3253123276e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FeedScrapper",
+			"item": [
+				{
+					"name": "get-news-feed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/feed-scrapper?type=elmundo",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"feed-scrapper"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "elmundo"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get-news-feed-elpais",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/feed-scrapper?type=elpais",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"feed-scrapper"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "elpais"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1258-qAbnPKCUZc+7bCtf7yiPWhdW0hY\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Mar 2023 07:55:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feed\": [\n        {\n            \"id\": {\n                \"value\": \"6e5bab0f-eeca-48da-8458-e455d162a95b\"\n            },\n            \"title\": \"Credit Suisse pedirá prestados hasta 50.000 millones al Banco Nacional de Suiza para fortalecer su liquidez\",\n            \"url\": \"https://elpais.com/economia/2023-03-16/credit-suisse-pedira-prestados-hasta-50000-millones-al-banco-nacional-de-suiza-para-fortalecer-su-liquidez.html\",\n            \"description\": \"\",\n            \"image\": \"La entidad está en el centro de las miradas después de que sus títulos se desplomaran un 24% \",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"06764edd-829d-484d-b131-12c33e98b182\"\n            },\n            \"title\": \"Los mercados esperan que el BCE aplaque el pánico financiero en la zona euro\",\n            \"url\": \"https://elpais.com/economia/2023-03-16/los-mercados-esperan-que-lagarde-aplaque-el-panico-financiero-en-la-zona-euro.html\",\n            \"description\": \"\",\n            \"image\": \"Los analistas dudan sobre si Lagarde mantendrá su intención de subir los tipos en 0,5 puntos o bien reculará y los aumentará solo en 0,25\\n\\n\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"81ecc369-7485-45de-a00f-701b5f2c791a\"\n            },\n            \"title\": \"Leonor de Borbón: de oficio, Reina; de profesión, militar, y de empleo, capitana general\",\n            \"url\": \"https://elpais.com/espana/2023-03-16/leonor-de-borbon-de-oficio-reina-de-profesion-militar.html\",\n            \"description\": \"https://imagenes.elpais.com/resizer/GSJEoQsXZXT75nqCoIjJniJNbOc=/414x0/filters:focal(1765x790:1775x800)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/SRZC3TPWMFE7VAUTB4EAUBIOIA.jpg\",\n            \"image\": \"Los tres años en las academias militares convertirán a la Princesa de Asturias en un miembro más de las Fuerzas Armadas, como su padre y su abuelo\\n\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"4bb05801-a12b-445f-976b-6efad88d6c28\"\n            },\n            \"title\": \"¿Qué hacer cuando tienes ansiedad? De darse una ducha a escribir tus pensamientos: así actúan los psicólogos\\n\",\n            \"url\": \"https://elpais.com/salud-y-bienestar/2023-03-16/de-darse-una-ducha-a-escribir-pensamientos-asi-actuan-los-psicologos-cuando-tienen-ansiedad.html\",\n            \"description\": \"https://imagenes.elpais.com/resizer/mkPnYbrmQHWYX93zCfnjmq4GpJE=/414x233/cloudfront-eu-central-1.images.arcpublishing.com/prisa/TMZ7PRXEGNG6LN3TMUYGCQBMHQ.jpg\",\n            \"image\": \"Seis profesionales explican a EL PAÍS sus estrategias para cuidar su salud mental\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"c88d5764-b2ae-4ee6-80aa-e9ede516599c\"\n            },\n            \"title\": \"El BCE debe ser rotundo\",\n            \"url\": \"https://elpais.com/opinion/editoriales/\",\n            \"description\": \"\",\n            \"image\": \"El contagio en las Bolsas europeas de la crisis bancaria de EE UU debe atajarse con contundencia y claridad\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"8859d678-cbff-4381-a2dd-6fd1947834b6\"\n            },\n            \"title\": \"Desplome de bancos y de... principios\",\n            \"url\": \"https://elpais.com/opinion/2023-03-16/desplome-de-bancos-y-de-principios.html\",\n            \"description\": \"\",\n            \"image\": \"“Para Europa, este suceso constituye una mala noticia en su intento, desde la Gran Recesión, de edificar su unión bancaria”\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"f8ccb15c-6e10-423e-b3cd-88ba7fff5ff7\"\n            },\n            \"title\": \"¿De quién es la democracia?\",\n            \"url\": \"https://elpais.com/opinion/2023-03-16/de-quien-es-la-democracia.html\",\n            \"description\": \"\",\n            \"image\": \"“No bastará una cumbre, ni muchas, para recuperar el prestigio perdido”\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"8924e79c-7f5b-4d00-adca-b9a10062d6bb\"\n            },\n            \"title\": \"Leonor, ¡ar!\",\n            \"url\": \"https://elpais.com/opinion/2023-03-16/leonor-ar.html\",\n            \"description\": \"\",\n            \"image\": \"“Lo suyo es a la vez un privilegio y una condena. Tiene un puesto de trabajo vitalicio. Pero, a diferencia de nuestros hijos, ella no puede errar y rectificar sin montar una crisis de Estado”\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"b883cfc5-b240-4bf5-ad5d-813cd94225f3\"\n            },\n            \"title\": \"Podemos y el 15-M: hay otra izquierda que se agota\",\n            \"url\": \"https://elpais.com/opinion/2023-03-16/podemos-y-el-15-m-hay-otra-izquierda-que-se-agota.html\",\n            \"description\": \"\",\n            \"image\": \"“El partido de Belarra debe preguntarse a dónde llevan algunas de sus estrategias a la contra, si el primer efecto es acabar sembrando la división en la izquierda”\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELPAIS\"\n            },\n            \"date\": \"2023-03-16T07:55:14.824Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "get-news-elmundo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/feed-scrapper?type=elmundo",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"feed-scrapper"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "elmundo"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e4e-kr1nFemJ1CYEtnGmHm7wMYbzJX0\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Mar 2023 11:32:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feed\": [\n        {\n            \"id\": {\n                \"value\": \"c04c8656-26d9-40e3-9c83-92cae9b76a09\"\n            },\n            \"title\": \"\",\n            \"url\": \"\",\n            \"description\": \"\",\n            \"image\": \"\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELMUNDO\"\n            },\n            \"author\": \"\",\n            \"location\": \"\",\n            \"date\": \"2023-03-16T11:32:35.164Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"f877c29d-db89-4142-9edb-97f161a3d488\"\n            },\n            \"title\": \"El rescate de Credit Suisse da aire a las bolsas y los bancos repuntan a la espera del BCE\\ufffdQu\\ufffd har\\ufffd hoy el BCE con los tipos? Las opciones de LagardeLa banca regional, un agujero negro sin fondoTodos los errores tras la crisis de Credit Suisse: de la fuga de los ricos a los manejos de la c\\ufffdpulaTamames anuncia \\\"novedades\\\" y Abascal espera que tras la filtraci\\ufffdn de su discurso el PP reflexione y apoye la moci\\ufffdn de censuraLa familia de Canet: \\\"Todav\\ufffda nos giran la cara, sienten repugnancia hacia nosotros\\\"\",\n            \"url\": \"https://www.elmundo.es/economia/2023/03/16/6412d96de4d4d8ea128b4573.html\",\n            \"description\": \"https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2023/03/15/16789129582514.jpg\",\n            \"image\": \"\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELMUNDO\"\n            },\n            \"author\": \"Redacci\\ufffdn: MAR\\ufffdA HERN\\ufffdNDEZRedacci\\ufffdn: PABLO R. SUANZESRedacci\\ufffdn: PABLO PARDORedacci\\ufffdn: CARLOS SEGOVIARedacci\\ufffdn: \\nMARISA CRUZ Redacci\\ufffdn: V\\ufffdCTOR MONDELO\",\n            \"location\": \"MadridBruselasMadridBarcelona\",\n            \"date\": \"2023-03-16T11:32:35.164Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"445191ca-1ad3-497c-981e-fb2d24066195\"\n            },\n            \"title\": \"Denuncian por cohecho a los jefes de Deportes de RTVE por alentar la \\\"publicidad encubierta\\\" en la cobertura del MundialPutin alarga su guerra esperando que Occidente se canseMuere a los 87 a\\ufffdos F\\ufffdlix Millet, ex presidente del Palau de la M\\ufffdsica y condenado por mordidas de Converg\\ufffdnciaLa Euroc\\ufffdmara pide analizar si 'Tito Berni' recibi\\ufffd fondos europeosEl PP lleva al Congreso la persecuci\\ufffdn de la Fiscal\\ufffda General al fiscal que se plant\\ufffd en el caso de Miguel \\ufffdngel Blanco\\\"Siempre he esperado que prevaleciera un d\\ufffdbil esp\\ufffdritu maternal, pero nada\\\"\",\n            \"url\": \"https://www.elmundo.es/television/2023/03/16/6411f0db21efa047538b4595.html\",\n            \"description\": \"\",\n            \"image\": \"\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELMUNDO\"\n            },\n            \"author\": \"Redacci\\ufffdn: ESTHER MUCIENTESRedacci\\ufffdn: \\nXAVIER COL\\ufffdS Redacci\\ufffdn: \\nGERM\\ufffdN GONZ\\ufffdLEZ Redacci\\ufffdn: CARLOS SEGOVIARedacci\\ufffdn: \\ufffdNGELA MARTIALAYRedacci\\ufffdn: \\nQUICO ALSEDO \",\n            \"location\": \"MadridMosc\\ufffdBarcelonaMadridMadrid\",\n            \"date\": \"2023-03-16T11:32:35.164Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"ccc1cfdd-a18c-4b6f-94de-b72af6864971\"\n            },\n            \"title\": \"Envases que contribuyen a frenar el desperdicio de alimentosHacienda no ha pagado ni un cheque de 200 euros mientras la inflaci\\ufffdn ahoga cada vez m\\ufffds a las familiasLa Polic\\ufffda pone a cuatro jefes de ETA al borde del procesamiento por el asesinato de Miguel \\ufffdngel Blanco\",\n            \"url\": \"https://www.elmundo.es/uestudio/2023/03/15/6411b746fdddff368a8b45da.html\",\n            \"description\": \"\",\n            \"image\": \"Ofrecido por TETRA PAK\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELMUNDO\"\n            },\n            \"author\": \"Redacci\\ufffdn: Redacci\\ufffdn: DANIEL VIA\\ufffdARedacci\\ufffdn: \\nMANUEL MARRACO \",\n            \"location\": \"MadridMadrid\",\n            \"date\": \"2023-03-16T11:32:35.164Z\"\n        },\n        {\n            \"id\": {\n                \"value\": \"607dac77-9897-4148-b2ce-d6fd6aff5a72\"\n            },\n            \"title\": \"\\\"Yolanda D\\ufffdaz es la vaciedad absoluta\\\"El misterio del dinero que el Bar\\ufffda pag\\ufffd a Negreira: \\\"S\\ufffdlo sacas 20.000 euros en met\\ufffdlico para no dejar rastro\\\"\",\n            \"url\": \"https://www.elmundo.es/papel/historias/2023/03/15/6411f016fc6c8303498b45e8.html\",\n            \"description\": \"\",\n            \"image\": \"\",\n            \"source\": {\n                \"validValues\": [\n                    \"ELMUNDO\",\n                    \"ELPAIS\"\n                ],\n                \"value\": \"ELMUNDO\"\n            },\n            \"author\": \"Redacci\\ufffdn: \\nCAYETANA \\ufffdLVAREZ DE TOLEDO Redacci\\ufffdn: JAVIER ATTARD\",\n            \"location\": \"Madrid\",\n            \"date\": \"2023-03-16T11:32:35.164Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/status",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/status",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c-xHRq9NqrcGHawE9dbNLY9fOAzv4\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Mar 2023 13:26:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"OK\"\n}"
+				}
+			]
+		}
+	]
+}

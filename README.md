@@ -2,6 +2,8 @@
 
 API build with Node-TS following, DDD Hexagonal Architecture and OOP best practices.
 
+![Project architecture](assets/daily_trends.png)
+
 ## About the project
 
 The api allows the user to create news and store the main 5 feed news from different Spanish newspapers (Elmundo & ElPais) for now.
@@ -87,3 +89,9 @@ API docs.
   ```txt
    Get 5 feeds from the selected sourcetype and saves it into the database
   ```
+
+## Manual Testing
+
+[Postman colletion](assets/DailyTrends.postman_collection.json)
+
+## Project Architecture
