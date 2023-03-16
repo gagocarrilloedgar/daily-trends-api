@@ -1,2 +1,7 @@
 imports:
   - { resource: ./application.yaml }
+
+services:
+  MongoTestEnvironment:
+    class: ../../../tests/context/Shared/infrastructure/mongo/MongoTestEnvironment
+    arguments: []

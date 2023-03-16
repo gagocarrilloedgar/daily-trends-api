@@ -17,10 +17,10 @@
     "build": "yarn build:clean && yarn build:tsc",
     "build:tsc": "tsc -p tsconfig.prod.json",
     "build:clean": "rm -r dist; exit 0",
-    "test:int": "jest --testPathPattern=tests/app",
-    "test:unit": "jest --testPathPattern=tests/context",
-    "test:int:cov": "jest --coverage --testPathPattern=tests/app",
-    "test": "jest"
+    "test:int": "NODE_ENV=dev jest --testPathPattern=tests/app",
+    "test:unit": "NODE_ENV=dev jest --testPathPattern=tests/context",
+    "test:int:cov": "NODE_ENV=dev jest --coverage --testPathPattern=tests/app",
+    "test": "NODE_ENV=dev jest"
   },
   "dependencies": {
     "@types/compression": "^1.7.0",
