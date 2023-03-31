@@ -15,7 +15,6 @@ export class ElPaisFeedScrapperRepository extends CheerioFeedScrapperRepository 
     const tags = await this.load(this.BASE_URL);
 
     const feeds = [] as Feed[];
-    // const baseBlockTags = tags(this.BASE_BLOCK);
 
     const articles = this.getArticles(tags, this.BASE_BLOCK, this.MAX_FEEDS);
 
