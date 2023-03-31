@@ -2,9 +2,9 @@ import { FeedId } from '../../Shared/domain/Feed/FeedId';
 import { SourceTypes } from '../../Shared/domain/Feed/Source';
 import { Feed } from '../domain';
 import { FeedScrapperRepository } from '../domain/FeedScrapperRepository';
-import { BaseCheerioFeedScrapper } from './CheerioFeedScrapperRepository';
+import { CheerioFeedScrapperRepository } from './CheerioFeedScrapperRepository';
 
-export class ElMundoFeedScrapperRepository extends BaseCheerioFeedScrapper implements FeedScrapperRepository {
+export class ElMundoFeedScrapperRepository extends CheerioFeedScrapperRepository implements FeedScrapperRepository {
   private readonly BASE_URL = 'https://www.elmundo.es/';
   private readonly type: SourceTypes = SourceTypes.ELMUNDO;
   private readonly BASE_BLOCK = 'div.ue-l-cg__block';
@@ -16,13 +16,7 @@ export class ElMundoFeedScrapperRepository extends BaseCheerioFeedScrapper imple
 
     const feeds = [] as Feed[];
 
-    const articles = tags(this.BASE_BLOCK)
-      .map((_i, el) =>
-        tags(el)
-          .find('article')
-          .map((_i, el) => el)
-      )
-      .slice(0, this.MAX_FEEDS);
+    const articles = this.getArticles(tags, this.BASE_BLOCK, this.MAX_FEEDS);
 
     articles.map((_i, el) => {
       const title = tags(el).find('h2').text();
